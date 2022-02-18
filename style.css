@@ -6,16 +6,12 @@
 
 body{
     font-family: serif;
+    background-color:rgb(186, 211, 240);
 }
 
 header{
     text-align: center;
     font-size: 3rem;
-}
-
-footer{
-    text-align: center;
-    font-size: 20px;
 }
 
 img {
@@ -26,4 +22,19 @@ img {
     height: 100%;
     object-fit: cover;
     width: 100%;
+}
+
+footer h1{
+    color:#bfbfbe;
+    background-color: #2a2b2f;
+    padding: 10px 0 50px 0;
+    font-size: medium;
+    text-align: center;
+}
+footer h2{
+    color:#bfbfbe;
+    background-color: #2a2b2f;
+    padding: 10px 0 10px 0;
+    font-size: small;
+    text-align: center;
 }
