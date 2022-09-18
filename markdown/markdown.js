@@ -24,7 +24,33 @@ $(function(){
         $preview.empty().append(html);
     });
 
-    const defaultText = `ここに表示されるよ`;
+    const defaultText = `# markdown 練習場
+
+ここで markdown を練習出来ます
+
+---
+
+>こんなことも
+
+| 1 | 2 |
+|:-:|:-:|
+|こんな|ことも|
+
+[これも](https://atcoder.jp/home)
+
+~~これも~~
+
+\`\`\`cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+
+}
+\`\`\`
+
+![ponjuice](https://github.com/ponjuice2020/ponjuice2020.github.io/blob/main/image/ponjuice.jpeg?raw=true)
+
+    `;
 
     $("textarea").text(defaultText).trigger("input");
 });
