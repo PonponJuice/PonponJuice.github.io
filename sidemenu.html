@@ -7,11 +7,7 @@
         padding: 0;
         list-style: none;
     }
-    
-    .container {
-        height: 100%;
-    }
-    
+
     .menu {
         background: #8c618d;
         color: #fff;
@@ -24,9 +20,7 @@
     }
     
     .contents {
-        background: #eee;
         height: 100%;
-        padding: 20px;
         box-sizing: border-box;
         margin-left: 45px;
     }
@@ -56,38 +50,37 @@
     .menu:hover {
         width: 200px;
     }
+
 </style>
-<div class="container">
-    <ul class="menu">
-        <li class="brand">
-            <img src="{$root}image/ponjuice.jpeg" style="vertical-align: middle;" width="41px" height="41px"> ponjuice
-        </li>
+<ul class="menu" style="z-index: 100100100;">
+    <li class="brand">
+        <img src="{$root}image/ponjuice.jpeg" style="vertical-align: middle;" width="41px" height="41px"> ponjuice
+    </li>
 
-        <a href="{$root}index.html">
-            <li class="menu-item">
-                <i class="fa fa-home" aria-hidden="true"></i>ブック一覧
-            </li>
-        </a>
-
-        <a href="{$root}markdown/markdown.html">
-            <li class="menu-item">
-                <i class="fa fa-comments" aria-hidden="true"></i>ディスカッション
-            </li>
-        </a>
-
-        <a href="https://img.atcoder.jp/ahc014/a3c240f5b1.html?lang=ja">
-            <li class="menu-item">
-                <i class="fa fa-user" aria-hidden="true"></i>アカウント設定
-            </li>
-        </a>
-
+    <a href="{$root}index.html">
         <li class="menu-item">
-            <i class="fa fa-question-circle" aria-hidden="true"></i>ヘルプ
+            <i class="fa fa-home" aria-hidden="true"></i>ブック一覧
         </li>
+    </a>
 
+    <a href="{$root}markdown/markdown.html">
         <li class="menu-item">
-            <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>読み込み中
+            <i class="fa fa-comments" aria-hidden="true"></i>ディスカッション
         </li>
+    </a>
 
-    </ul>
-</div>
+    <a href="https://img.atcoder.jp/ahc014/a3c240f5b1.html?lang=ja">
+        <li class="menu-item">
+            <i class="fa fa-user" aria-hidden="true"></i>アカウント設定
+        </li>
+    </a>
+
+    <li class="menu-item">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>ヘルプ
+    </li>
+
+    <li class="menu-item">
+        <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>読み込み中
+    </li>
+
+</ul>

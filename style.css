@@ -10,3 +10,7 @@ html, body {
     height:100vh;
     background-color: #5fb1a3;
 }
+
+.contents{
+    padding: 10px;
+}
