@@ -4,6 +4,7 @@
     .contents{
         position: absolute;
         top: 8vh;
+        color: #0f0e17;
     }
 
     .menu{
@@ -13,19 +14,12 @@
         justify-content: space-around;
         align-items: center;
         min-height: 8vh;
-        background-color: aqua;
+        background-color: #8bd3dd;
     }
 
     .logo{
-        color: #EEFAFF;
+        color: #f8f5f2;
         font-size: 40px;
-    }
-
-    .nav-links{
-        display: flex;
-        justify-content: space-around;
-        width: 43%;
-        transition: all 0.5s ease-in-out;
     }
 
     .nav-links li{
@@ -34,7 +28,7 @@
 
     .nav-links a{
         text-decoration: none;
-        color: #EEFAFF;
+        color: #f8f5f2;
         font-weight: bold;
     }
 
@@ -46,7 +40,7 @@
     .burger div{
         width: 25px;
         height: 3px;
-        background-color: #EEFAFF;
+        background-color: #f8f5f2;
         margin: 5px;
         transition: all 0.5s ease-in-out;
     }
@@ -60,15 +54,20 @@
     }
 
     .nav-links{
+        display: flex;
+        justify-content: space-around;
+        transition: all 0.5s ease-in-out;
         position: fixed;
         right: 0;
         height: 92vh;
         top: 8vh;
-        background-color: aqua;
+        background-color: #8bd3dd;
         flex-direction: column;
         align-items: center;
         width: 30%;
         transform: translateX(100%);
+        padding: 0;
+        margin: 0;
     }
 
     .nav-links li{

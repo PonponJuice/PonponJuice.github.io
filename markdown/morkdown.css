@@ -8,19 +8,20 @@ body{
     width: 100vw;
     height: 100%;
     min-height: 92vh;
-    background: #F3E5F5;
+    background: #f8f5f2;
     display: flex;
 }
 
 .preview{
+    padding: 5px;
     box-sizing: border-box;
     width: 50%;
-    background: #EEFAFF;
+    background: #f8f5f2;
 }
 
 .editor{
     width: 50%;
-    background: #fce4ec;
+    background: #f8f5f2;
     position: relative;
 }
 
@@ -29,6 +30,7 @@ body{
     width: 100%;
     height: 100%;
     resize: none;
+    padding: 5px;
     font-size: 16px;
     box-sizing: border-box;
     border: 0;
@@ -40,5 +42,5 @@ body{
 }
 
 .markdown-body blockquote{
-    border-color: #8c618d;
+    border-color: #f582ae;
 }

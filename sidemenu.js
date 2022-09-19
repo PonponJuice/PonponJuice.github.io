@@ -1,5 +1,4 @@
 function sidemenu(rootDir){
-    console.log("aaa");
     $.ajax({
         url: rootDir + "sidemenu.html",
         cache: false,
