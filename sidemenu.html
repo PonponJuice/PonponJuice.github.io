@@ -1,101 +1,170 @@
 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
-    
-    ul, li {
-        margin: 0;
-        padding: 0;
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+        background-color: aqua;
+    }
+
+    .logo{
+        color: #EEFAFF;
+        font-size: 40px;
+        padding: 5px;
+    }
+
+    .nav-links{
+        display: flex;
+        justify-content: space-around;
+        width: 43%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .nav-links li{
         list-style: none;
     }
 
-    .menu a,
-    .menu a:visited,
-    .menu a:hover,
-    .menu a:active {
-      color: inherit;
-      color: azure;
+    .nav-links a{
+        text-decoration: none;
+        color: #EEFAFF;
+        font-weight: bold;
     }
 
-    .menu {
-        background-color: #021F4D;
-        color: azure;
-        position: absolute;
-        height: 100%;
-        width: 45px;
-        white-space: nowrap;
-        overflow: hidden;
-        transition: width 0.1s ease-in;
-    }
-    
-    .contents {
-        height: 100%;
-        box-sizing: border-box;
-        margin-left: 45px;
-    }
-    
-    .brand {
-        padding: 2px;
-        height: 50px;
-        
-    }
-    
-    .menu-item .fas {
-        font-size: 19px;
-        width: 45px;
-        text-align: center;
-    }
-    
-    .menu-item {
-        line-height: 35px;
+    .burger{
+        display: none;
         cursor: pointer;
-        transition: background-color 0.1s ease-in-out;
+    }
+
+    .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: #EEFAFF;
+        margin: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .nav-active{
+        transform: translateX(0%) !important;
     }
     
-    .menu-item:hover {
-        background: #4d294d;
+    body{
+        overflow-x: hidden;
     }
-    
-    .menu:hover {
-        width: 200px;
+
+    .nav-links{
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: aqua;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%);
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    @media screen and (max-width:1024px){
+        .nav-links{
+            position: absolute;
+            right: 0;
+            height: 92vh;
+            top: 8vh;
+            background-color: aqua;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+            transform: translateX(100%);
+        }
+    }
+
+    @media screen and (max-width:768px){
+        .nav-links{
+            position: absolute;
+            right: 0;
+            height: 92vh;
+            top: 8vh;
+            background-color: aqua;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transform: translateX(100%);
+        }
+    }
+
+    @keyframes navLinksFade{
+        0%{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2{
+        opacity: 0;
+    }
+
+    .toggle .line3{
+        transform: rotate(405deg) translate(-5px, -6px);
     }
 
 </style>
-<div  ontouchastart="" class="menu" style="z-index: 100100100;">
+<nav style="z-index: 100100100;" class="menu">
+    <div class="logo">
+        <img src="{$root}image/ponjuice.jpeg" width="80" style="vertical-align: middle;"> ponjuiceのweb
+    </div>
+    <ul class="nav-links">
+        <li><a href="{$root}index.html">ホーム</a></li>
+        <li><a href="{$root}markdown/markdown.html">markdown練習場</a></li>
+        <li><a href="#">オセロ対戦</a></li>
+        <li><a href="#">atcoder 解説</a></li>
+    </ul>
 
-    <a>
-        <li class="brand">
-            <img src="{$root}image/ponjuice.jpeg" style="vertical-align: middle;" width="41px" height="41px"> ponjuice
-        </li>
-    </a>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>
 
-    <a href="{$root}index.html">
-        <li class="menu-item">
-            <i class="fas fa-home" aria-hidden="true" ></i>topに戻る
-        </li>
-    </a>
+<script>
+    const burger= document.querySelector(".burger");
+    const nav= document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links li");
 
-    <a href="{$root}markdown/markdown.html">
-        <li class="menu-item">
-            <i class="fas fa-stream" aria-hidden="true"></i>markdown練習場
-        </li>
-    </a>
+    burger.addEventListener("click",()=>{
 
-    <a href="">
-        <li class="menu-item">
-            <i class="fas fa-circle" aria-hidden="true"></i>オセロ対決
-        </li>
-    </a>
+        nav.classList.toggle("nav-active");
+        
+        navLinks.forEach((link,index)=>{
 
-    <a href="">
-        <li class="menu-item">
-            <i class="fas fa-window-restore" aria-hidden="true"></i>atcoder解説
-        </li>
-    </a>
+            if(link.style.animation){
+                link.style.animation = "";
+            }
+            else{
+                link.style.animation = `navLinksFade 0.5s ease forwards ${index/7+0.4}s`;
+            }
 
-    <a>
-        <li class="menu-item">
-            <i class="fas fa-spinner fa-pulse" aria-hidden="true"></i>作成中
-        </li>
-    </a>
+        });
 
-</div>
+        burger.classList.toggle("toggle");
+        
+    });
+</script>
