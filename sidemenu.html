@@ -1,10 +1,81 @@
+<link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
+    * {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
     .contents{
+        min-height:92vh;
+        width: 100%;
         position: absolute;
         top: 8vh;
         color: #0f0e17;
+    }
+
+    .contents .article{
+        padding-bottom: 100px;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+
+    .accordion {
+      max-width: 400px;
+      font-family: Lato;
+      margin-bottom: 20px;
+    
+      background-color: #ec5366;
+      border-radius: 6px;
+    }
+    
+    .accordion .header {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 40px 0 8px;
+      position: relative;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .accordion .header-icon {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      transform: rotate(0deg);
+      transition-duration: 0.3s;
+    }
+    
+    .accordion .body {
+      display: none;
+      background-color: #fff;
+      border: 10px solid #ec5366;
+      padding: 8px;
+      border-top: 0;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    
+    .accordion.show .header-icon {
+      transform: rotate(180deg);
+      transition-duration: 0.3s;
+    }
+    
+    .accordion.purple {
+      background-color: #8c618d;
+    }
+    
+    .accordion.purple .body {
+      border-color: #8c618d;
     }
 
     .menu{
@@ -15,15 +86,19 @@
         align-items: center;
         min-height: 8vh;
         background-color: #8bd3dd;
+        padding: 0;
+        margin: 0;
     }
 
     .logo{
         color: #f8f5f2;
         font-size: 40px;
+        width: 70%;
     }
 
     .nav-links li{
         list-style: none;
+        font-size: 20px;
     }
 
     .nav-links a{
@@ -101,7 +176,10 @@
         .logo{
             font-size: 25px;
         }
-    
+
+        .nav-links li{
+            font-size: 15px;
+        }
     }
 
     @keyframes navLinksFade{
@@ -130,14 +208,35 @@
 
 </style>
 <nav style="z-index: 100100100;" class="menu">
-    <div class="logo">
-        <img src="{$root}image/ponjuice.jpeg" class="myicon"> ponjuiceのweb
+    <div class="logo" >
+        <img src="{$root}image/ponjuice.jpeg" class="myicon" > ponjuiceのweb
     </div>
     <ul class="nav-links"style="z-index: 10010010;">
-        <li><a href="{$root}index.html">ホーム</a></li>
-        <li><a href="{$root}markdown/markdown.html">markdown練習場</a></li>
-        <li><a href="#">オセロ対戦</a></li>
-        <li><a href="#">atcoder 解説</a></li>
+        <li>
+            <a href="{$root}index.html">
+                <i class="fas fa-home-lg-alt" aria-hidden="true"></i> ホーム
+            </a>
+        </li>
+        <li>
+            <a href="{$root}markdown/markdown.html">
+                <i class="fas fa-list-ul" aria-hidden="true"></i> markdown練習場
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-circle" aria-hidden="true"></i> オセロ対戦
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-file-alt" aria-hidden="true"></i> atcoder 解説
+            </a>
+        </li>
+        <li>
+            <a href="{$root}samplepage/samplepage.html">
+                <i class="fas fa-spinner fa-pulse" aria-hidden="true"></i> 準備中
+            </a>
+        </li>
     </ul>
 
     <div class="burger">
@@ -170,4 +269,26 @@
         burger.classList.toggle("toggle");
         
     });
+
+    $(() => {
+        // クリックイベントハンドラ
+        $(".header").on("click", (e) => {
+          const $target = $(e.target);
+          // $targetから遡って一番近い.accordionを探す
+          const $accordion = $target.closest(".accordion");
+          // $accordionから子要素の.bodyを探す
+          const $accordionBody = $accordion.children(".body");
+      
+          // ボディが可視状態か判定する
+          if ($accordionBody.is(":visible")) {
+            // 可視状態の場合
+            $accordion.removeClass("show");
+            $accordionBody.slideUp(150);
+          } else {
+            // 不可視状態の場合
+            $accordion.addClass("show");
+            $accordionBody.slideDown(150);
+          }
+        });
+      });
 </script>

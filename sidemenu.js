@@ -10,3 +10,16 @@ function sidemenu(rootDir){
         }
     });
 }
+
+function siteEnd(rootDir){
+    $.ajax({
+        url: rootDir + "footer.html",
+        cache: false,
+        async: false,
+        dataType: 'html',
+        success: function(html){
+            html = html.replace(/\{\$root\}/g, rootDir);
+            document.write(html);
+        }
+    });
+}
