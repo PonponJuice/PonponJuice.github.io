@@ -30,16 +30,6 @@ $(function(){
 
 ---
 
->こんなことも
-
-| 1 | 2 |
-|:-:|:-:|
-|こんな|ことも|
-
-[これも](https://atcoder.jp/home)
-
-~~これも~~
-
 \`\`\`cpp
 #include<bits/stdc++.h>
 using namespace std;

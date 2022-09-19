@@ -1,7 +1,14 @@
 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
-    nav{
+    .contents{
+        position: absolute;
+        top: 8vh;
+    }
+
+    .menu{
+        position: fixed;
+        min-width: 100vw;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -12,7 +19,6 @@
     .logo{
         color: #EEFAFF;
         font-size: 40px;
-        padding: 5px;
     }
 
     .nav-links{
@@ -54,7 +60,7 @@
     }
 
     .nav-links{
-        position: absolute;
+        position: fixed;
         right: 0;
         height: 92vh;
         top: 8vh;
@@ -73,32 +79,30 @@
         display: block;
     }
 
+    .myicon{
+        height: 80px;
+        vertical-align: middle;
+    }
+
     @media screen and (max-width:1024px){
         .nav-links{
-            position: absolute;
-            right: 0;
-            height: 92vh;
-            top: 8vh;
-            background-color: aqua;
-            flex-direction: column;
-            align-items: center;
             width: 40%;
-            transform: translateX(100%);
         }
     }
 
     @media screen and (max-width:768px){
         .nav-links{
-            position: absolute;
-            right: 0;
-            height: 92vh;
-            top: 8vh;
-            background-color: aqua;
-            flex-direction: column;
-            align-items: center;
             width: 50%;
-            transform: translateX(100%);
         }
+
+        .myicon{
+            height: 60px;
+        }
+
+        .logo{
+            font-size: 25px;
+        }
+    
     }
 
     @keyframes navLinksFade{
@@ -128,9 +132,9 @@
 </style>
 <nav style="z-index: 100100100;" class="menu">
     <div class="logo">
-        <img src="{$root}image/ponjuice.jpeg" width="80" style="vertical-align: middle;"> ponjuiceのweb
+        <img src="{$root}image/ponjuice.jpeg" class="myicon"> ponjuiceのweb
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links"style="z-index: 10010010;">
         <li><a href="{$root}index.html">ホーム</a></li>
         <li><a href="{$root}markdown/markdown.html">markdown練習場</a></li>
         <li><a href="#">オセロ対戦</a></li>
