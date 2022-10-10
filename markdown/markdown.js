@@ -38,7 +38,7 @@ int main(){
 }
 \`\`\`
 
-![ponjuice](https://github.com/ponjuice2020/ponjuice2020.github.io/blob/main/image/ponjuice.jpeg?raw=true)
+![ponjuice](../image/ponjuice.jpeg)
 
     `;
 
