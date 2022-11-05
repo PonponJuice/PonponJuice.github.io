@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample-page</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="../sidemenu.js"></script>
+</head>
+<body>
+    <div>
+        <script>sidemenu('../');</script>
+        <div class="contents">
+            <style>
+                .article *{
+                    padding: 10px;
+                    margin: 10px;
+                }
+
+                .creations img{
+                    width: 30vh;
+                    float: left;
+                }
+
+                .creations{
+                    list-style: none;
+                }
+                
+                .clear {
+                    clear: both;
+                }
+
+
+
+            </style>
+            <div class="article">
+                <h1>
+                    創作物一覧
+                </h1>
+                <ul>
+                    <li class="creations">
+                        <a href="./othello.html">
+                            <img src="./image/othello.png" alt="othello" >
+                            <h1>オセロ</h1>
+                            <h2>
+                                高校のグロ探の時間に作成しました。<br>
+                                モンテカルロ探索やアルファベータ法を利用して実装しています<br>
+                                モンテカルロ木探索はバグって完成していないので気が向いたら作る予定です
+                            </h2>
+                        </a>
+                    </li>
+                    <br class="clear">
+                
+                    <li class="creations">
+                        <a href="./markdown.html">
+                            <img src="./image/markdown.png" alt="markdown">
+                            <h1>markdown</h1>
+                            <h2>
+                                何も作りたいものがないときに作りました<br>
+                                特に意味はないです
+                            </h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script>siteEnd('../');</script>
+        </div>
+    </div>
+</body>
+</html>

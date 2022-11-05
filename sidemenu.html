@@ -16,7 +16,7 @@
         min-height:92vh;
         width: 100%;
         position: absolute;
-        top: 8vh;
+        top: max(8vh ,70px);
         color: #0f0e17;
     }
 
@@ -27,7 +27,8 @@
     @import url('https://fonts.googleapis.com/css?family=Lato');
 
     .accordion {
-      max-width: 400px;
+        max-width: 90vw;
+        min-width: 60vw;
       font-family: Lato;
       margin-bottom: 20px;
     
@@ -84,7 +85,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        min-height: 8vh;
+        min-height: max(8vh,70px);
         background-color: #8bd3dd;
         padding: 0;
         margin: 0;
@@ -154,8 +155,9 @@
     }
 
     .myicon{
-        height: 80px;
+        height: clamp(60px,6.7vh,80px);
         vertical-align: middle;
+        border-radius: 25%;
     }
 
     @media screen and (max-width:1024px){
@@ -167,10 +169,6 @@
     @media screen and (max-width:768px){
         .nav-links{
             width: 50%;
-        }
-
-        .myicon{
-            height: 60px;
         }
 
         .logo{
@@ -218,23 +216,23 @@
             </a>
         </li>
         <li>
-            <a href="{$root}markdown/markdown.html">
-                <i class="fas fa-list-ul" aria-hidden="true"></i> markdown練習場
+            <a href="{$root}creations/creations.html">
+                <i class="fas fa-circle" aria-hidden="true"></i> 創作物
             </a>
         </li>
         <li>
-            <a href="{$root}othello/othello.html">
-                <i class="fas fa-circle" aria-hidden="true"></i> オセロ対戦
+            <a href="{$root}atcoder/samplepage.html">
+                <i class="fas fa-file-alt" aria-hidden="true"></i> 競技プログラミング
             </a>
         </li>
         <li>
-            <a href="#">
-                <i class="fas fa-file-alt" aria-hidden="true"></i> atcoder 解説
+            <a href="{$root}creations/markdown.html">
+                <i class="fas fa-list-ul" aria-hidden="true"></i> ぼちぼち日記
             </a>
         </li>
         <li>
             <a href="{$root}samplepage/samplepage.html">
-                <i class="fas fa-spinner fa-pulse" aria-hidden="true"></i> 準備中
+                <i class="fas fa-spinner fa-pulse" aria-hidden="true"></i> 作成中
             </a>
         </li>
     </ul>
