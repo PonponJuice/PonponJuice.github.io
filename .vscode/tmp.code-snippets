@@ -1,0 +1,44 @@
+{
+    "Binary-algorithm": {
+        "prefix": "nibu",
+        "body": [
+            "auto c=[&](ll num){return num;};",
+            "ll ok=0,ng=1e18;",
+			"while(ng-ok>1){",
+            "    ll mid=(ok+ng)/2;",
+            "    if(c(mid)){ok=mid;}",
+			"    else{ng=mid;}",
+            "}",
+            ""
+            ],
+        "description": "template"
+    },
+    
+    "tatamikomi": {
+        "prefix": "accordion",
+        "body": [
+"",
+"<div style=\"width:0;margin:5px;\"class=\"accordion purple\">",
+"    <div class=\"header\" >",
+"        回答コード",
+"        <i class=\"fa fa-2x fa-angle-down header-icon\"></i>",
+"    </div>",
+"    <div class=\"body\">",
+"        <pre>",
+"            <code class=\"cpp\">",
+"$1",
+"            </code>",
+"        </pre>",
+"    </div>",
+"</div>"
+            ],
+        "description": "template"
+    },
+    "sumple": {
+        "prefix": "sumple",
+        "body": [
+            ""
+            ],
+        "description": "template"
+    },
+}
